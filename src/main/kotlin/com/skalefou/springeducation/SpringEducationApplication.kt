@@ -1,6 +1,7 @@
 package com.skalefou.springeducation
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.boot.persistence.autoconfigure.EntityScan
 import org.springframework.boot.runApplication
 
 @SpringBootApplication

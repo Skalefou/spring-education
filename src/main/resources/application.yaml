@@ -3,25 +3,25 @@ spring:
     name: spring-education
 
   datasource:
-    url: dbc:postgresql://${POSTGRES_HOST:localhost}:${POSTGRES_PORT:5432}/${POSTGRES_DB:your_database}
+    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:${POSTGRES_PORT:5432}/${POSTGRES_DB:your_database}
     username: ${POSTGRES_USER:your_username}
     password: ${POSTGRES_PASSWORD:your_password}
     driver-class-name: org.postgresql.Driver
 
-    jpa:
-        hibernate:
-            ddl-auto: update
-        show-sql: true
-        properties:
-            hibernate:
-              dialect: org.hibernate.dialect.PostgreSQLDialect
-              format_sql: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
 
-    sql:
-        init:
-            mode: never
+  sql:
+    init:
+      mode: never
 
-  logging:
-    level:
-      org.hibernate.SQL: debug
-      org.hibernate.orm.jdbc.bind: trace
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.hibernate.orm.jdbc.bind: trace
+    org.hibernate.tool.schema: debug
